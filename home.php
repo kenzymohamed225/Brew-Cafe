@@ -112,7 +112,28 @@ $items = $db->select('products');
             </p>
             <div class="d-flex gap-3">
                 <a href="/Brew-Cafe-main/menu.php" class="btn btn-outline-brown text-white border-white">Explore Menu</a>
-                <a href="/Brew-Cafe-main/users/register.php" class="btn btn-brown">Register</a>
+                <?php if (isset($_SESSION['userId'])) { ?>
+
+                    <li>
+                        <a href="/Brew-Cafe-main/users/logout.php" class="btn btn-outline-brown text-white border-white">Logout</a>
+
+                    </li>
+
+
+                <?php } else { ?>
+
+                    <li>
+                        <a href="/Brew-Cafe-main/users/register.php" class="btn btn-outline-brown text-white border-white">Register</a>
+
+                    </li>
+
+                    <li>
+                        <a href="/Brew-Cafe-main/users/login.php" class="btn btn-outline-brown text-white border-white">Login</a>
+
+                    </li>
+
+                <?php } ?>
+
             </div>
         </div>
         <div class="col-md-6 text-center p-3">
@@ -142,58 +163,58 @@ $items = $db->select('products');
 </section>
 
 <!-- Dynamic Popular Items Section -->
- <section id="popular-items" class="container my-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title h3">Our Popular Items</h2>
-        </div>
-        <div class="row g-4">
-            
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                    <img src="/Brew-Cafe-main/assets/images/cappuccino.jpg" class="card-img-top card-menu-img" alt="Cappuccino">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold fs-6 mb-1">Cappuccino</h5>
-                        <p class="text-muted small mb-3">$3.50</p>
-                        <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
+<section id="popular-items" class="container my-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title h3">Our Popular Items</h2>
+    </div>
+    <div class="row g-4">
 
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                    <img src="/Brew-Cafe-main/assets/images/latte.jpg" class="card-img-top card-menu-img" alt="Latte">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold fs-6 mb-1">Latte</h5>
-                        <p class="text-muted small mb-3">$3.00</p>
-                        <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                    <img src="/Brew-Cafe-main/assets/images/mocha.jpg" class="card-img-top card-menu-img" alt="Mocha">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold fs-6 mb-1">Mocha</h5>
-                        <p class="text-muted small mb-3">$3.50</p>
-                        <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="col-md-3">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                    <img src="/Brew-Cafe-main/assets/images/coldbrew.jpg" class="card-img-top card-menu-img" alt="Cold Brew">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold fs-6 mb-1">Cold Brew</h5>
-                        <p class="text-muted small mb-3">$4.00</p>
-                        <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
-                    </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <img src="/Brew-Cafe-main/assets/images/cappuccino.jpg" class="card-img-top card-menu-img" alt="Cappuccino">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold fs-6 mb-1">Cappuccino</h5>
+                    <p class="text-muted small mb-3">$3.50</p>
+                    <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <img src="/Brew-Cafe-main/assets/images/latte.jpg" class="card-img-top card-menu-img" alt="Latte">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold fs-6 mb-1">Latte</h5>
+                    <p class="text-muted small mb-3">$3.00</p>
+                    <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <img src="/Brew-Cafe-main/assets/images/mocha.jpg" class="card-img-top card-menu-img" alt="Mocha">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold fs-6 mb-1">Mocha</h5>
+                    <p class="text-muted small mb-3">$3.50</p>
+                    <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <img src="/Brew-Cafe-main/assets/images/coldbrew.jpg" class="card-img-top card-menu-img" alt="Cold Brew">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="fw-bold fs-6 mb-1">Cold Brew</h5>
+                    <p class="text-muted small mb-3">$4.00</p>
+                    <a href="/Brew-Cafe-main/menu.php" class="btn btn-brown btn-sm mt-auto w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
 include_once "footer.php";
